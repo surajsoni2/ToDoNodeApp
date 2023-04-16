@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export const connectDB = () => {
+export const dbConnect = () => {
     mongoose
       .connect(process.env.MONGO_URI, {
         dbName: "backendapi",
