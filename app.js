@@ -26,7 +26,7 @@ app.use(cors({
 
 //Using Routers
 app.use('/api/v1/users', userRouter)
-app.use('/task', taskRouter);
+app.use('/api/v1/task', taskRouter);
 
 // Error Middleware
 app.use(errorMiddleware)
