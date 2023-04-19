@@ -36,7 +36,7 @@ export const login = async (req,res,next)=>{
     if(!isMatch) return next(new ErrorHandler("Invalid Email or Password",400));
     
     sendCookie(user,res,`Welcome back ${user.name}`,200)
-
+  
     } catch (error) {
         next(error)
     }
@@ -47,7 +47,7 @@ export const logout = (req,res)=>{
         .status(200)
         .cookie("token","",{
             expires: new Date(Date.now()),
-            samesite: process.env.NODE_ENV ==="Development"? "lax" : "none",
+            sameSite: process.env.NODE_ENV ==="Development"? "lax" : "none",
             secure: process.env.NODE_ENV ==="Development"? false : true
         })
         .json({
